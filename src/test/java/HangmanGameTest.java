@@ -15,6 +15,9 @@ class HangmanGameTest {
     private final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
     private final PrintStream printStream = new PrintStream(byteArrayOutputStream);
     private final HangmanGame hangmanGame = new HangmanGame(scanner, printStream);
+    private final PrintReporter printReporter = new PrintReporter(printStream);
+    private DecisionMaker decisionMaker = new DecisionMaker(printReporter, printStream);
+    private final GameState gameState = new GameState(6, 0, 1, "hello");
 
     @Test
     void play() {
@@ -22,10 +25,11 @@ class HangmanGameTest {
 
     @Test
     void printGallows() {
-//        hangmanGame.printGallows(3);
+        printReporter.printGallows(gameState);
         assertEquals(GallowSegments.valueOf("SEGMENT_1").output, 1);
     }
 
+//    Not really a necessary test - testing a method call rather than an observable outcome
 //    @Test
 //    void incorrectGuess() {
 //        HangmanGame hangmanGame = mock(HangmanGame.class);
@@ -40,7 +44,7 @@ class HangmanGameTest {
     @Test
     void checkIfGuessCorrect() {
         char guess = 'h';
-//        assertTrue(hangmanGame.guessCorrect(guess));
+        assertTrue(decisionMaker.guessCorrect(guess, gameState));
     }
 
     @Test

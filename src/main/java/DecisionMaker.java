@@ -1,5 +1,3 @@
-import com.sun.xml.internal.bind.v2.TODO;
-
 import java.io.PrintStream;
 
 public class DecisionMaker {
@@ -36,4 +34,10 @@ public class DecisionMaker {
         }
     }
 
+    public boolean isWordComplete(GameState gameState) {
+        if (gameState.wordAsList.equals(WordUtils.wordAsGuessed)) {
+            return true;
+        }
+        return false;
+    }
 }

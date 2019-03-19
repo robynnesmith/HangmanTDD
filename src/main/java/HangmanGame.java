@@ -26,8 +26,15 @@ public class HangmanGame {
 
         while (gameState.getWrongGuesses() < gameState.getTotalWrongGuessesAllowed()) {
             decisionMaker.rightOrWrong(getGuess(), gameState);
+            if (decisionMaker.isWordComplete(gameState)){
+                printStream.println("Congratulations, you won!");
+                break;
+            } else if (gameState.getWrongGuesses() == gameState.getTotalWrongGuessesAllowed()) {
+                printStream.println("You lost");
+                break;
+            }
         }
-        printStream.println("You lost");
+
     }
 
     char getGuess() {
