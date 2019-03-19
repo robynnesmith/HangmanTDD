@@ -1,18 +1,21 @@
 public enum GallowSegments {
-    SEGMENT_1(1),
-    SEGMENT_2(2),
-    SEGMENT_3(3),
-    SEGMENT_4(4),
-    SEGMENT_5(5),
-    SEGMENT_6(6);
+    SEGMENT_1("\n" + "\n|" + "\n|" + "\n|" + "\n|" + "\n|" + "\n|__________________\n"),
+    SEGMENT_2("\n_________" + "\n|" + "\n|" + "\n|" + "\n|" + "\n|" + "\n|_________________\n"),
+    SEGMENT_3("\n_________" + "\n|       |" + "\n|" + "\n|" + "\n|" + "\n|" + "\n|__________________\n"),
+    SEGMENT_4("\n_________" + "\n|       |" + "\n|       O" + "\n|" + "\n|" + "\n|" + "\n|__________________\n"),
+    SEGMENT_5("\n_________" + "\n|       |" + "\n|       O" + "\n|       |" + "\n|" + "\n|" + "\n|__________________\n"),
+    SEGMENT_6("\n_________" + "\n|       |" + "\n|       O" + "\n|    ---|" + "\n|" + "\n|" + "\n|__________________\n"),
+    SEGMENT_7("\n_________" + "\n|       |" + "\n|       O" + "\n|    ---|---" + "\n|" + "\n|" + "\n|__________________\n"),
+    SEGMENT_8("\n_________" + "\n|       |" + "\n|       O" + "\n|    ---|---" + "\n|      /" + "\n|     /" + "\n|__________________\n"),
+    SEGMENT_9("\n_________" + "\n|       |" + "\n|       O" + "\n|    ---|---" + "\n|      / \\" + "\n|     /   \\" + "\n|__________________");
 
-    int output;
+    String output;
 
-    GallowSegments(int output) {
+    GallowSegments(String output) {
         this.output = output;
     }
 
-    public int getOutput() {
+    public String getOutput() {
         return output;
     }
 

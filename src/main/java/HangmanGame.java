@@ -15,7 +15,7 @@ public class HangmanGame {
         this.scanner = scanner;
         printReporter = new PrintReporter(printStream);
         decisionMaker = new DecisionMaker(printReporter, printStream);
-        gameState = new GameState(6, 0, 0, "hello");
+        gameState = new GameState(9, 0, 0, "hello");
         printStream.println("stop");
     }
 
