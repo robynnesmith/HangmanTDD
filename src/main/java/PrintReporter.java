@@ -10,7 +10,7 @@ public class PrintReporter {
     }
 
     void printUnderscores(List<String> wordAsList) {
-        printStream.println("My word: " + Arrays.toString(WordUtils.createListOfUnderscores(wordAsList).toArray()).replaceAll("," , "")); //change to print number of places based on chosen word length
+        printStream.println("My word: " + Arrays.toString(WordUtils.createListOfUnderscores(wordAsList).toArray()).replaceAll("," , ""));
     }
 
     void printGallows(GameState gameState) {
@@ -18,7 +18,14 @@ public class PrintReporter {
     }
 
     void printWordAsGuessed (List<String> wordAsGuessed){
-        printStream.println("My word: " + Arrays.toString(wordAsGuessed.toArray()).replaceAll("," , "")); //change to print number of places based on chosen word length
+        printStream.println("My word: " + Arrays.toString(wordAsGuessed.toArray()).replaceAll("," , ""));
 
+    }
+
+    public void printCurrentWordState() {
+        if (WordUtils.wordAsGuessed.size() == 0){
+            printStream.println("The word is: " + Arrays.toString(WordUtils.listOfUnderscores.toArray()).replaceAll("," , ""));
+        }
+        printStream.println("The word is: " + Arrays.toString(WordUtils.wordAsGuessed.toArray()).replaceAll("," , ""));
     }
 }

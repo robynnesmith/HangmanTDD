@@ -14,7 +14,7 @@ public class WordUtils {
 
     public static String generateRandomWord() {
         Random random = new Random();
-        int lengthOfWord = random.nextInt(8);
+        int lengthOfWord = random.nextInt(5) + 3;
         WordGenerator generator = new WordGenerator();
         return generator.newWord(lengthOfWord).toLowerCase();
     }

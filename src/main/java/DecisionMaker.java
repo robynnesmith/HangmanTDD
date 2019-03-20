@@ -58,6 +58,7 @@ public class DecisionMaker {
             gameState.incrementWrongGuesses();
             printReporter.printGallows(gameState);
             printStream.println("You have made " + gameState.getWrongGuesses() + " incorrect guesses");
+            printReporter.printCurrentWordState();
         }
     }
 
