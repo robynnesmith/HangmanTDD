@@ -99,4 +99,5 @@ public class DecisionMaker {
         previousGuesses.add(guess);
         return false;
     }
+
 }

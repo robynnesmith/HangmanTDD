@@ -15,12 +15,13 @@ public class HangmanGame {
         this.scanner = scanner;
         printReporter = new PrintReporter(printStream);
         decisionMaker = new DecisionMaker(printReporter, printStream);
-        gameState = new GameState(9, 0, 0, "hello");
+        gameState = new GameState(9, 0, 0, WordUtils.generateRandomWord());
         printStream.println("stop");
     }
 
     public void play() {
         printStream.println("Let's play hangman");
+
 
         printReporter.printUnderscores(gameState.getWordAsList());
 

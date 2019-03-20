@@ -1,4 +1,7 @@
+import com.maximeroussy.invitrode.WordGenerator;
+
 import java.util.List;
+import java.util.Random;
 
 public class GameState {
     int totalWrongGuessesAllowed;
@@ -6,6 +9,7 @@ public class GameState {
     int wrongGuesses;
     String word;
     List<String> wordAsList;
+
 
     public GameState(int totalWrongGuessesAllowed, int correctGuesses, int wrongGuesses, String word){
         this.totalWrongGuessesAllowed = totalWrongGuessesAllowed;
@@ -18,6 +22,7 @@ public class GameState {
     public GameState(){
         new GameState(6, 0, 0, "hello");
     }
+
 
     public int getTotalWrongGuessesAllowed() {
         return totalWrongGuessesAllowed;

@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import com.maximeroussy.invitrode.WordGenerator;
 
 public class WordUtils {
 
@@ -9,6 +11,14 @@ public class WordUtils {
     public WordUtils() {
 
     }
+
+    public static String generateRandomWord() {
+        Random random = new Random();
+        int lengthOfWord = random.nextInt(8);
+        WordGenerator generator = new WordGenerator();
+        return generator.newWord(lengthOfWord).toLowerCase();
+    }
+
 
     static List<String> getWordAsList(String word) {
         List<String> returnList = new ArrayList<String>();
