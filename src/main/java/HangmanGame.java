@@ -43,6 +43,11 @@ public class HangmanGame {
     String getGuess() {
         printStream.println("What is your guess?");
         String guess = scanner.nextLine();
+        while (decisionMaker.checkRepeatedGuess(guess)) {
+            printStream.println("You have already guessed " + guess);
+            printStream.println("Please enter a new guess");
+            guess = scanner.nextLine();
+        }
         return guess;
     }
 

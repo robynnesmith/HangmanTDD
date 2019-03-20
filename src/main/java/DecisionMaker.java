@@ -1,4 +1,7 @@
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
 
 public class DecisionMaker {
 
@@ -6,10 +9,12 @@ public class DecisionMaker {
     private PrintReporter printReporter;
     private PrintStream printStream;
     private String letterOrWord = "";
+    private List<String> previousGuesses;
 
     public DecisionMaker(PrintReporter printReporter, PrintStream printStream) {
         this.printReporter = printReporter;
         this.printStream = printStream;
+        previousGuesses  = new ArrayList<String>();
     }
 
     String letterOrWord(String guess, GameState gameState) {
@@ -84,6 +89,14 @@ public class DecisionMaker {
         } else if (guess.equals(gameState.word)) {
             return true;
         }
+        return false;
+    }
+
+    public boolean checkRepeatedGuess(String guess) {
+        if (previousGuesses.contains(guess)){
+            return true;
+        }
+        previousGuesses.add(guess);
         return false;
     }
 }
