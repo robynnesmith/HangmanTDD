@@ -43,8 +43,8 @@ class HangmanGameTest {
 
     @Test
     void checkIfGuessCorrect() {
-        char guess = 'h';
-        assertTrue(decisionMaker.guessCorrect(guess, gameState));
+        String guess = "h";
+        assertTrue(decisionMaker.letterGuessCorrect(guess, gameState));
     }
 
     @Test
